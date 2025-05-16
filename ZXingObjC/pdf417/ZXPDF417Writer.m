@@ -30,7 +30,7 @@ const int ZX_PDF417_WHITE_SPACE = 30;
 /**
  * default error correction level
  */
-const int ZX_PDF417_DEFAULT_ERROR_CORRECTION_LEVEL = 2;
+const int ZX_PDF417_DEFAULT_ERROR_CORRECTION_LEVEL = 1;
 
 
 @implementation ZXPDF417Writer
@@ -87,7 +87,7 @@ const int ZX_PDF417_DEFAULT_ERROR_CORRECTION_LEVEL = 2;
     return nil;
   }
 
-  int aspectRatio = 4;
+  int aspectRatio = 1;
   NSArray *originalScale = [[encoder barcodeMatrix] scaledMatrixWithXScale:1 yScale:aspectRatio];
   BOOL rotated = NO;
   if ((height > width) ^ ([(ZXByteArray *)originalScale[0] length] < [originalScale count])) {
